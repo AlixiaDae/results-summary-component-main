@@ -1,5 +1,5 @@
 :root {
-    --lred: hsl(0, 100%, 67%);
+    --lred: hsla(0, 100%, 67%);
     --oyellow: hsl(39, 100%, 56%);
     --gteal: hsl(166, 100%, 37%);
     --cblue: hsl(234, 85%, 45%);
@@ -40,12 +40,67 @@ body {
   font-family: var(--mainFont);
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   margin: 0;
+}
+
+img {
+    height: 20px;
 }
 
 ul {
   list-style-type: none;
+  padding: 0;
+  margin-top: -7px;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    height: 45px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+
+ul li p span {
+    color: black;
+}
+
+ul li p {
+    color: lightslategray;
+    font-size: 16px;
+}
+
+.score {
+    display: flex;
+    align-items: center;
+}
+
+ul li:first-child {
+    background-color: hsla(0, 100%, 67%, 0.1);
+    color: var(--lred);
+}
+
+ul li:nth-child(2) {
+    background-color: hsla(39, 100%, 56%, 0.1);
+    color: var(--oyellow);
+}
+
+ul li:nth-child(3) {
+    background-color: hsla(166, 100%, 37%, 0.1);
+    color: var(--gteal);
+}
+
+ul li:nth-child(4) {
+    background-color: hsla(234, 85%, 45%, 0.1);
+    color: var(--cblue);
 }
 
 main {
@@ -57,9 +112,10 @@ main {
 
 .component-card {
     display: flex;
-    height: 100%;
     border-radius: 10px;
+    height: 400px;
     box-shadow: 5px 5px 10px hsl(221, 28%, 87%);
+    background-color: var(--white);
 }
 
 .result-box {
@@ -110,7 +166,69 @@ main {
 }
 
 .result-box p {
+    margin-top: -10px;
     font-size: 15px;
     width: 200px;
     color: lightgray;
+}
+
+/* Summary */
+.summary-box {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 2rem;
+    justify-content: space-between;
+    gap: 5px;
+    background-color: var(--white);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.left-side {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+button {
+    background-color: var(--dgblue);
+    padding: 10px;
+    color: whitesmoke;
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+}
+
+button:hover {
+    background-image: linear-gradient(180deg, var(--lsblue), var(--lrblue));
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        height: 832px;
+    }
+    main {
+        display: block;
+        height: 730px;
+    }
+
+    .component-card {
+        flex-direction: column;
+        width: 290px;
+    }
+
+    .result-box {
+        border-radius: 0;
+    }
+
+    .summary-box {
+        width: 290px;
+        border-radius: 0;
+    }
+
+    .attribution {
+        text-align: center;
+    }
+
 }
